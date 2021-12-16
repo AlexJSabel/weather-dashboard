@@ -1,39 +1,56 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Weather Dashboard</title>
 </head>
 <body>
+    <header class="header-background">
+        <h1>Weather Dashboard</h1>
+    </header>
+    
+    <main class="container-fluid mt-1">
 
-<header>
-    <h1>Weather Dashboard</h1>
-</header>
+        <div class="row">
+            <div class="col-3 side">
+                <h5>Search for a City:</h5>
+                <form id="city-form" class="search">
+                    <input name="city" id="city" type="text" autofocus="true" placeholder="Enter city here" class="form-input" />
+                    <button type="submit" class="btn mt-1" id="city-search">Search</button>
+                </form>
+                <div id="previous-search-btns"></div>
+            </div>
 
+            <div class="col-9">
 
-<main>
-    <div>
-        city search
-    </div>
+                <div class="row searched-city border mr-1" id="updated-forecast">
+                    <div class="col-12">
+                        <h2 id="searched-city-name"></h2>
+                        <h2 id="current-date"></h2>
+                        <img id="weather-icon"></img>
+                        <div id="updated-forecast-box">
+                            <p>Temperature: <span id="temp"></span></p>
+                            <p>Wind Speed: <span id="wind"></span></p>
+                            <p>Humidity: <span id="humidity"></span></p>
+                            <p>UV Index: <span id="uv-index"></span></p>
+                        </div>
+                    </div>
+                </div>
 
-    <div>
-        weather info
-    </div>
+                <div class="row mt-1" id="five-day">
+                    <h2 class="col-12" id="forecast-title">5-Day Forecast:</h2>
+                    <div class="col-12" id="forecast-container"></div>
+                </div>
 
-    <div>
-        5 day forcast
-    </div>
-
-
-</main>
-
-
-
-
+            </div>
+        </div>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./assets/js/script.js"></script>
 </body>
